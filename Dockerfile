@@ -1,4 +1,3 @@
-# https://hub.docker.com/r/cwaffles/openpose
 FROM nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
 
 #get deps
@@ -47,9 +46,8 @@ RUN gdown 1QCSxJZpnWvM00hx49CJ2zky7PWGzpcEh
 RUN unzip models.zip
 RUN cp -r /deleteme/models /openpose
 RUN rm -r /deleteme/models
-RUN git clone https://github.com/hermanndererdmann/Mecanum_ROS_Project.git
-RUN cp -r /deleteme/Mecanum_ROS_Project/SOFTWARE/pc/openpose/examples/tutorial_api_python /openpose/examples
-
+#add ros openpose script
+COPY /src /openpose/examples/tutorial_api_python
 
 
 
