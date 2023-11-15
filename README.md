@@ -4,7 +4,8 @@
 containerized person recognition with openpose in ROS.
 
 ## Requirements
-- Docker
+- Docker >= 20.10
+- nvidia-container-toolkit
 - NVIDIA GPU
 - ≈ 20GB of free space
 
@@ -27,7 +28,7 @@ xhost +local:root; docker run -ti --rm  --gpus all --net=host -e DISPLAY=$DISPLA
 
 With each start of the container, the hostname & IP of the ROS slave have to be added to the ects/hosts file with `nano`. Both IP addresses should be static.
 
-In my example this is:
+In my case this is:
 ```
 10.0.106.30 rosberry
 ```
